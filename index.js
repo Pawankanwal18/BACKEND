@@ -26,6 +26,30 @@ app.post("/register",async (req,res)=>{
     }
 })
 
+
+app.post("/login", async(req,res)=>{
+
+
+    try{
+  //validate 
+
+
+  const people = await User.findById(req.body._id);
+
+  if(!(req.body.emailId === people.emailId))
+  
+    throw new Error("Invalid credentials");
+
+
+   const IsAllowed = await bcrypt.compare(req.body.password, people.password);
+
+    }
+
+    catch(err){
+
+        res.send("Error:"+err.message);
+    }
+})
   
 app.get("/info", async(req,res)=>{
 
