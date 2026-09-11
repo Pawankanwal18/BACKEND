@@ -3,7 +3,8 @@ const express = require("express");
 const app = express();
 const main = require("./database");
 const User = require("./models/user")
-const validUser= require("./utils/validateUser");
+const validUser= require("./utils/validateUser")
+const bcrypt = require("bcrypt");
 
 app.use(express.json());
 
@@ -12,6 +13,9 @@ app.post("/register",async (req,res)=>{
     try{
       
     validUser(req.body);
+    //converting pass into hass
+
+  req.body.password =   await bcrypt.hash(req.body.password,10);
     
        await User.create(req.body);
        res.send("User Register Successfully")
