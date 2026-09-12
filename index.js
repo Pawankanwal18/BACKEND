@@ -46,6 +46,8 @@ app.post("/login", async(req,res)=>{
    if(!IsAllowed)
        throw new Error("Invalid credentials");
 
+   //jwt token
+
    res.send("Login Successfully");    
 
     }
