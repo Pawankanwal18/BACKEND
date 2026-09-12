@@ -5,6 +5,7 @@ const main = require("./database");
 const User = require("./models/user")
 const validUser= require("./utils/validateUser")
 const bcrypt = require("bcrypt");
+const cookieParser = require('cookie-parser')
 
 app.use(express.json());
 
