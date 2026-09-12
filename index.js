@@ -53,7 +53,7 @@ app.post("/login", async(req,res)=>{
 
    const token = jwt.sign({_id:people._id, emailId:people.emailId},"Pawan@5256");
 
-   res.cookie("token","ipjeuwueiuejdiow092392jdj");
+   res.cookie("token",token);
    res.send("Login Successfully");
 
     }
@@ -68,6 +68,7 @@ app.get("/info", async(req,res)=>{
 
     try{
     
+        //validate the user
         const result = await User.find();
 
         console.log(req.cookies);
