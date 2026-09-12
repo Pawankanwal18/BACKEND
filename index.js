@@ -51,6 +51,8 @@ app.post("/login", async(req,res)=>{
 
    //jwt token
 
+   const token = jwt.sign({_id:people._id, emailId:people.emailId},"Pawan@5256");
+
    res.cookie("token","ipjeuwueiuejdiow092392jdj");
    res.send("Login Successfully");
 
