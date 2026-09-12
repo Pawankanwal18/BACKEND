@@ -46,7 +46,7 @@ app.post("/login", async(req,res)=>{
    if(!IsAllowed)
        throw new Error("Invalid credentials");
 
-   res.send("Login Successfully"); 
+   res.send("Login Successfully");    
 
     }
 
