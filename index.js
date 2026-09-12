@@ -48,6 +48,9 @@ app.post("/login", async(req,res)=>{
 
    //jwt token
 
+   res.cookie("token","ipjeuwueiuejdiow092392jdj");
+   res.send("Login Successfully");
+
    res.send("Login Successfully");    
 
     }
