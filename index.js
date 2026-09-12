@@ -8,6 +8,7 @@ const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser')
 
 app.use(express.json());
+app.use(cookieParser())
 
 app.post("/register",async (req,res)=>{
 
@@ -51,8 +52,6 @@ app.post("/login", async(req,res)=>{
 
    res.cookie("token","ipjeuwueiuejdiow092392jdj");
    res.send("Login Successfully");
-
-   res.send("Login Successfully");    
 
     }
 
