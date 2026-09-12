@@ -68,7 +68,12 @@ app.get("/info", async(req,res)=>{
 
     try{
     
-        //validate the user
+        //validate the user first
+
+        const payload = jwt.verify(req.cookies.token,"Pawan@5256");
+
+       console.log(payload);
+
         const result = await User.find();
 
         console.log(req.cookies);
