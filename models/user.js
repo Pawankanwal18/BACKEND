@@ -48,5 +48,5 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.getJWT = function(){
 
-    Jwt.sign({_id:people._id,  emailId:people.emailId},"Pawan@5256");
+    Jwt.sign({_id:this._id,  emailId:this.emailId},"Pawan@5256");
 }
