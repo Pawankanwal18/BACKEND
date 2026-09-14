@@ -44,8 +44,9 @@ const userSchema = new mongoose.Schema({
         default: "This is the default photo"
 
     },
-})
+},  { timestamps : true})
 
-const User = mongoose.model("user", userSchema);
+userSchema.methods.getJWT = function(){
 
-module.exports = User; 
+    Jwt.sign({_id:people._id,  emailId:people.emailId},"Pawan@5256");
+}
