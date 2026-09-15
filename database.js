@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 async function main() {
 
-    await mongoose.connect("mongodb+srv://coding3000_db_user:Pawan%407895@coderdost.u6nluvj.mongodb.net/Instagram");
+    await mongoose.connect(process.env.DB_CONNECT_KEY);
 
 
     //code likhna shuru ho gaya
@@ -11,3 +11,4 @@ async function main() {
 }
 
 module.exports = main;
+//added and module added

@@ -44,14 +44,14 @@ app.post("/login", async(req,res)=>{
     throw new Error("Invalid credentials");
 
 
-   const IsAllowed = await bcrypt.compare(req.body.password, people.password);
+   const IsAllowed = people.verifyPassword(req.body.password);
    
    if(!IsAllowed)
        throw new Error("Invalid credentials");
 
    //jwt token
 
-   const token = jwt.sign({_id:people._id, emailId:people.emailId},"Pawan@5256");
+   const token = people.getJWT();
 
    res.cookie("token",token);
    res.send("Login Successfully");
