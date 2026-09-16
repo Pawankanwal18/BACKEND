@@ -134,7 +134,7 @@ app.patch("/user", async(req,res)=>{
 main()
     .then(() => {
         console.log("Connected to DB")
-        app.listen(3000, () => {
+        app.listen(process.env.PORT, () => {
             console.log("listening at port 3000");
         })
     })
