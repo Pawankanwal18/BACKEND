@@ -7,6 +7,9 @@ const validUser= require("./utils/validateUser")
 const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken');
+require('dotenv').config()
+
+console.log(process.env);
 
 app.use(express.json());
 app.use(cookieParser())
