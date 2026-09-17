@@ -37,7 +37,7 @@ app.post("/login", async(req,res)=>{
 
 
     try{
-  //validate 
+  //validate user
 
 
   const people = await User.findById(req.body._id);
