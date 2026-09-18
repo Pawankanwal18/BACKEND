@@ -70,7 +70,7 @@ app.post("/login", async(req,res)=>{
 app.get("/info", async(req,res)=>{
 
     try{
-    
+    //ratelimiter
         //validate the user first 
 
         const payload = jwt.verify(req.cookies.token,"Pawan@5256");
